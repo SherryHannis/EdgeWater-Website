@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+    <!link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine:bold,bolditalic|Inconsolata:italic|Droid+Sans">
+    <style>
+       
+        table, th, td {
+            border: 2px solid silver;
+            border-collapse:separate;
+            padding: 11px;
+            border-spacing:5px;
+ 
+        }
+th {
+background-color: #4CAF50;
+color: white;
+}
+
+        th, td {
+                text-align: left;
+border-left: 3px solid red;
+        }
+
+        table#tb01 {
+            width: 100%;
+            background-color:white;
+        }
+tr:hover{background-color:#e2dcdf;}
+        
+    </style>
+
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+            var today = new Date();
+            var day = today.getDay();
+            var WeekDay = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                document.write("Todays is:&nbsp;&nbsp"+ WeekDay[day]);
+
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+            var second = today.getSeconds();
+            var status = "am";
+              if (hour > 12) {
+                    status = "pm";
+                    hour = hour - 12;
+                  }
+                    //location.reload(); how to refresh the browser every 3 seconds?
+            document.write("<br/><br/>Current time is:&nbsp;&nbsp" + hour + ":" + minute + ":" + second + "&nbsp" + status);
+            document.write("<br/><br/>Current time is:&nbsp;&nbsp" + hour + status + ":" + minute + ":" + second);
+            document.write("<hr>" );
+//...............................................................................//
+            document.write(today);
+            
+
+            var month = today.getUTCMonth();
+            month++;
+            var day = today.getDate();
+            var year = today.getFullYear();
+            
+            document.write("<br/><br/> Today's date is mm-dd-yyyy: &nbsp" + month + "-" + day + "-" + year);
+            document.write("<br/><br/> Today's date is mm/dd/yyyy: &nbsp" + month + "/" + day + "/" + year);
+            document.write("<br/><br/> Today's date is dd/mm/yyyy: &nbsp" + day + "/" + month + "/" + year);
+            document.write("<hr>");
+                    
+        //...............................................................................//    
+         
+</script>
+
+    <br/>
+    <table id="tb01" style="width:50%">
+<caption> <br/><b>Monthly savings</b><br/></caption>
+        <tr>
+            <th>Column1 heading</th>
+            <th>Column2 heading</th>
+            
+        </tr>
+        <tr>
+            <td>Row1 Cell1</td>
+            <td>Row1 Cell2</td>
+            
+        </tr>
+        <tr>
+            <td>Row2 Cell2</td>
+            <td>Row2 Cell2</td>
+            
+        </tr>
+        <tr>
+            <td>Row3 Cell3</td>
+            <td>Row3 Cell3</td>
+           
+        </tr>
+    </table>
+
+<button onclick="myCreateFunction()">Create row</button>
+<button onclick="myCreateFunction()">Update row</button>
+<button onclick="myDeleteFunction()">Delete row</button>
+
+<script>
+
+function myCreateFunction() {
+    var table = document.getElementById("tb01");
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = "NEW CELL1";
+    cell2.innerHTML = "NEW CELL2";
+}
+
+function myDeleteFunction() {
+    document.getElementById("tb01").deleteRow(0);
+}
+
+
+function myFunction() {
+    var x = document.getElementById("tb01").rows[0].cells;
+    x[0].innerHTML = "NEW CONTENT";
+}
+</script>
+</body>
+</html>
+
