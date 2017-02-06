@@ -21,12 +21,10 @@ th {
 background-color: #4CAF50;
 color: white;
 }
-
         th, td {
                 text-align: left;
 border-left: 3px solid red;
         }
-
         table#tb01 {
             width: 100%;
             background-color:white;
@@ -44,7 +42,6 @@ tr:hover{background-color:#e2dcdf;}
             var day = today.getDay();
             var WeekDay = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
                 document.write("Todays is:&nbsp;&nbsp"+ WeekDay[day]);
-
             var hour = today.getHours();
             var minute = today.getMinutes();
             var second = today.getSeconds();
@@ -60,7 +57,6 @@ tr:hover{background-color:#e2dcdf;}
 //...............................................................................//
             document.write(today);
             
-
             var month = today.getUTCMonth();
             month++;
             var day = today.getDate();
@@ -105,26 +101,21 @@ tr:hover{background-color:#e2dcdf;}
 <button onclick="myDeleteFunction()">Delete row</button>
 
 <script>
-
 function myCreateFunction() {
     var table = document.getElementById("tb01");
-    var row = table.insertRow(0);
+    var row = table.insertRow(-1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     cell1.innerHTML = "NEW CELL1";
     cell2.innerHTML = "NEW CELL2";
 }
-
 function myDeleteFunction() {
-    document.getElementById("tb01").deleteRow(0);
+    document.getElementById("tb01").deleteRow(1);
 }
-
-
 function myUpdateFunction() {
-    var x = document.getElementById("tb01").rows[0].cells;
+    var x = document.getElementById("tb01").rows[1].cells;
     x[0].innerHTML = "NEW CONTENT";
 }
 </script>
 </body>
 </html>
-
