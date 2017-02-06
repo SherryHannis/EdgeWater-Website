@@ -101,7 +101,7 @@ tr:hover{background-color:#e2dcdf;}
     </table>
 
 <button onclick="myCreateFunction()">Create row</button>
-<button onclick="myCreateFunction()">Update row</button>
+<button onclick="myUpdateFunction()">Update row</button>
 <button onclick="myDeleteFunction()">Delete row</button>
 
 <script>
@@ -120,7 +120,7 @@ function myDeleteFunction() {
 }
 
 
-function myFunction() {
+function myUpdateFunction() {
     var x = document.getElementById("tb01").rows[0].cells;
     x[0].innerHTML = "NEW CONTENT";
 }
